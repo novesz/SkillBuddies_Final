@@ -1,0 +1,101 @@
+/* Kisablak: háttér (a főoldal látszik mögötte) */
+.groupfinder-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* A kisablak doboz – világos kékesszürke, kerek sarkok */
+.groupfinder-modal {
+  position: relative;
+  background: #b8c9e0;
+  border-radius: 16px;
+  padding: 24px 28px 28px;
+  max-width: 360px;
+  width: calc(100% - 32px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+}
+
+.groupfinder-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 22px;
+  line-height: 1;
+  color: #213153;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  transition: background 0.2s;
+}
+
+.groupfinder-close:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.groupfinder-title {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: center;
+}
+
+.groupfinder-modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.groupfinder-input {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #e8e4f2;
+  font-size: 15px;
+  color: #0f172a;
+  outline: none;
+}
+
+.groupfinder-input::placeholder {
+  color: #64748b;
+}
+
+.groupfinder-error {
+  margin: 0;
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.groupfinder-join {
+  width: 100%;
+  max-width: 200px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #f97316;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.groupfinder-join:hover {
+  background: #ea580c;
+}

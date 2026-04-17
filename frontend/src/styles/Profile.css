@@ -1,0 +1,342 @@
+/* ==========================================================================
+   0) DESIGN TOKENS / VARIABLES
+   ========================================================================== */
+:root{
+  --bg1:#e9eef9;
+  --card:#ffffff;
+  --border:#e6e6ea;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --brand:#287df5;
+  --danger:#ff0000;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ==========================================================================
+   1) LAYOUT
+   ========================================================================== */
+.profile-wrap{
+  min-height: 100vh;
+  display: block;
+  padding: 32px 16px 64px;
+  background: radial-gradient(1200px 600px at 20% -10%, #cfdaf5 0, #e9eef9 40%, #f4f6fb 100%);
+}
+.profile-card{
+  width: min(980px, 100%);
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 8px);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* ==========================================================================
+   2) FEJLÉC BLOKK
+   ========================================================================== */
+.profile-header{ margin-bottom: 16px; }
+.profile-header h1{
+  font-size: clamp(22px, 2.2vw, 28px);
+  margin: 0 0 4px;
+  color: var(--text);
+}
+.muted{ color: var(--muted); }
+
+/* ==========================================================================
+   3) GRID
+   ========================================================================== */
+.profile-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 900px){
+  .profile-grid{ grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   4) ALAPELEMEK
+   ========================================================================== */
+.card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: #fff;
+}
+.input{
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.btn{
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+  transition: filter .2s, transform .05s, box-shadow .2s, background-color .2s, color .2s, border-color .2s;
+}
+.btn:hover{ filter: brightness(0.98); }
+.btn:active{ transform: translateY(1px); }
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(40,125,245,.25);
+}
+
+.btn-primary{
+  border-color: transparent;
+  background: var(--brand);
+  color: #fff;
+}
+
+.btn-danger{
+  background: var(--danger);
+  color: #fff;
+  border-color: transparent;
+}
+.btn-danger:hover{ filter: brightness(0.96); }
+.btn-danger:focus-visible{ box-shadow: 0 0 0 3px rgba(255,0,0,.25); }
+
+.btn-ghost-danger{
+  background: transparent;
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.btn-ghost-danger:hover{ background: rgba(225,29,72,.06); }
+
+.row-right{ display:flex; justify-content:flex-end; gap:12px; }
+
+/* ==========================================================================
+   5) AVATAR
+   ========================================================================== */
+.avatar-section .avatar-title{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.avatar-strip-wrap{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-strip{
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 6px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+.avatar-strip::-webkit-scrollbar{ height: 8px; }
+.avatar-strip::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.15);
+  border-radius: 8px;
+}
+
+.preset{
+  flex: 0 0 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #fff center / cover no-repeat;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--border);
+  scroll-snap-align: start;
+  transition: transform .2s, box-shadow .2s;
+}
+.preset:hover{ transform: translateY(-2px); }
+.preset.active{ box-shadow: 0 0 0 2px var(--brand); }
+
+.nav-btn{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center; 
+  justify-content:center;
+  color: var(--text);
+}
+.nav-btn:hover{ background: var(--bg1); }
+.nav-btn:disabled{ opacity: .35; cursor: default; }
+
+/* ==========================================================================
+   6) SKILLEK (TAG LISTA)
+   ========================================================================== */
+.skills-section .skills-title{ font-weight:600; margin-bottom:10px; }
+.tag-list{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+
+.tag{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.tag-x{
+  width: 20px; height: 20px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  padding: 0; line-height: 1;
+  font-size: 12px; font-weight: 600;
+  border: none; border-radius: 50%;
+  background: #fff; color: #6b7280;
+  cursor: pointer;
+}
+.tag-x:hover{ background:#eef2f7; }
+
+.add-row{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+/* ==========================================================================
+   6/B) AUTOCOMPLETE DROPDOWN (ÚJ)
+   ========================================================================== */
+
+/* wrapper az input + dropdown körül */
+.skills-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+/* a legördülő lista */
+.skills-suggestions {
+  position: absolute;
+  top: 48px; /* input méret + kis eltolás */
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  z-index: 20;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.skills-suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+  transition: background-color .15s, padding-left .15s;
+}
+
+.skills-suggestions li:hover {
+  background: #f3f4f6;
+  padding-left: 18px;
+}
+
+/* ==========================================================================
+   7) PASSWORD PANEL
+   ========================================================================== */
+
+.text{
+  font-size: 14px;
+  color: black;
+}
+
+.password-section{
+  margin-top: 22px;
+  border-top: 1px dashed var(--border);
+  padding-top: 16px;
+  position: relative;
+}
+.pw-heading{
+  width:100%;
+  display:flex; justify-content:space-between; align-items:center;
+  font-weight:600;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  cursor:pointer;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+  position: relative;
+  z-index: 2;
+}
+.password-section.open .pw-heading{ transform: translateY(-10px); }
+.pw-heading .chev{
+  width: 10px; height: 10px;
+  border-right: 2px solid #6b7280;
+  border-bottom: 2px solid #6b7280;
+  transform: rotate(45deg);
+  transition: transform .35s;
+}
+.password-section.open .chev{ transform: rotate(-135deg); }
+
+.pw-info {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.pw-cooldown {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.pw-cooldown strong {
+  color: #dc2626;
+}
+
+.pw-panel{
+  margin-top: -8px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  display: grid; gap: 12px;
+  transform-origin: top;
+  transform: translateY(-8px) scaleY(0.9);
+  opacity: 0; max-height: 0; overflow: hidden;
+  transition:
+    max-height .45s ease,
+    opacity .35s ease,
+    transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.password-section.open .pw-panel{
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+  max-height: 500px;
+}
+
+/* ==========================================================================
+   8) LOGOUT
+   ========================================================================== */
+.logout-row{
+  margin-top: 14px;
+  display:flex;
+  justify-content:flex-end;
+}
+.logout-row .btn-danger{
+  background: var(--danger) !important;
+  color: #fff !important;
+  border: none !important;
+}
+.logout-row .btn-danger:hover{ filter: brightness(0.96); }
+.logout-row .btn-danger:focus-visible{
+  box-shadow: 0 0 0 3px rgba(255,0,0,.25);
+}

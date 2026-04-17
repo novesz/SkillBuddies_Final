@@ -1,0 +1,38 @@
+.profile-container {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .profile-popup {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 10px;
+    min-width: 150px;
+    z-index: 1000;
+    background-color: #89a8d8;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    border-color: #2596be;
+
+  }
+  .link-item{
+    
+    color: black;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .link-item:hover{
+    text-decoration: none;
+  }
+  

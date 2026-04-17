@@ -1,0 +1,35 @@
+/* ===== Globális reset ===== */
+html, body, #root, .App {
+  width: 100%;
+  min-height: 100%;          /* biztosítja, hogy mindig kitöltse, de tovább is nőhessen */
+  margin: 0;
+  padding: 0;
+}
+
+/* Görgetés engedélyezése, vízszintes lezárása */
+body {
+  overflow-y: auto;           /* görgethető, ha nagyobb a tartalom */
+  overflow-x: hidden;         /* ne legyen vízszintes csúszka */
+  font-family: system-ui, sans-serif; /* maradhat egy alap betűtípus */
+  background-color: #e9eef9;  /* tetszés szerint, csak hogy ne legyen fehér villanás */
+}
+
+/* ===== App konténer ===== */
+.App {
+  max-width: none;            /* nincs középre zárva */
+  display: block;             /* ne használjon gridet/flexet alapból */
+  height: auto;               /* NE legyen fix 100%, mert levágja a scrollt */
+  min-height: 100vh;          /* mindig legalább a viewport magassága */
+  box-sizing: border-box;     /* minden padding belül számolódjon */
+}
+
+/* Admin Panel download / installation page */
+.admin-panel-page { max-width: 640px; margin: 0 auto; padding: 24px; }
+.admin-panel-intro { margin-bottom: 24px; color: #333; }
+.admin-panel-section { margin-bottom: 24px; }
+.admin-panel-section h2 { font-size: 1.1rem; margin-bottom: 8px; }
+.admin-panel-steps { padding-left: 20px; margin: 8px 0; }
+.admin-panel-steps li { margin-bottom: 6px; }
+.admin-panel-page code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+.admin-panel-back { margin-top: 24px; }
+.admin-panel-back a { color: #1e88e5; }

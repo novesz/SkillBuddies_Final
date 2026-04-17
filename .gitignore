@@ -1,0 +1,15 @@
+# Logs
+backend/logs/
+*.log
+
+# Node
+backend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vs/
+

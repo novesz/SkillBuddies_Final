@@ -1,0 +1,145 @@
+@import "./Home.css"; /* optional: ensures color vars are available */
+
+.support-page {
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.support-nav {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.support-menu {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: var(--text);
+}
+
+.support-logo {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Main layout */
+.support-main {
+  flex: 1;
+  text-align: center;
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.support-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.support-subtitle {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+/* Form styling */
+.support-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.support-field {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 10px;
+}
+
+.support-field label {
+  width: 120px;
+  text-align: right;
+  font-weight: 600;
+  line-height: 2.4;
+}
+
+.support-field input,
+.support-field textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: var(--chip);
+  box-shadow: var(--shadow);
+  font-size: 15px;
+  color: var(--text);
+  resize: none;
+}
+
+.support-submit {
+  background: #ffb319;
+  border: none;
+  padding: 10px 32px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s ease;
+}
+
+.support-submit:hover {
+  background: #ff9f00;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .support-field {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .support-field label {
+    text-align: left;
+    margin-bottom: 6px;
+  }
+
+  .support-main {
+    margin-top: 40px;
+  }
+}
+.success-message-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.success-message {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

@@ -1,0 +1,203 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+:root{
+  --shadow: 10px 10px 20px rgba(0,0,0,.25);
+}
+
+/* ==========================================================================
+   HEADER (sticky, fixed height)
+   ========================================================================== */
+.sb-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  height: 90px;                 /* fix header magasság */
+  padding: 0 24px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(180,200,255,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: background-color .3s ease;
+  overflow: visible;            /* hogy a lebegő elemek kilóghassanak */
+}
+
+/* ==========================================================================
+   HAMBURGER
+   ========================================================================== */
+.sb-hamburger{
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: #f3b34e;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  position: relative;
+}
+.sb-hamburger span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease, top .2s ease;
+  transform-origin: center;
+}
+.sb-hamburger span:nth-child(1){ top: 12px; }
+.sb-hamburger span:nth-child(2){ top: 50%; transform: translateX(-50%) translateY(-50%); }
+.sb-hamburger span:nth-child(3){ bottom: 12px; top: auto; }
+.sb-hamburger.is-open span:nth-child(1){ top: 50%; transform: translateX(-50%) translateY(-50%) rotate(45deg); }
+.sb-hamburger.is-open span:nth-child(2){ opacity: 0; }
+.sb-hamburger.is-open span:nth-child(3){ top: 50%; bottom: auto; transform: translateX(-50%) translateY(-50%) rotate(-45deg); }
+
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
+.sb-brand{ display:flex; align-items:center; justify-content:flex-start; }
+.sb-logo-only{
+  height: 125px;                 /* nem lóg túl a 90px headeren */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: 12px;
+}
+
+/* ==========================================================================
+   USER SEARCH
+   ========================================================================== */
+.sb-user-search {
+  flex: 0 1 300px;
+  min-width: 150px;
+  position: relative;
+  margin: 0 20px;
+}
+
+.user-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-search-input:focus {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-search-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.user-search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-search-item:hover {
+  background: #f0f4ff;
+}
+
+.user-search-item:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+.user-search-item:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
+.user-search-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   PFP (JOBB SZÉL) – HARDENED
+   ========================================================================== */
+.sb-profile{
+  margin-left: auto;            /* jobb szélre tolja */
+  flex: 0 0 60px;               /* fix hely a gombnak */
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  background: transparent !important;
+  border-radius: 50%;
+  
+  cursor: pointer;
+  position: relative;           /* sosem absolute a világban */
+}
+.sb-profile-img{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: none !important;
+}
+
+/* ==========================================================================
+   BUTTON FOCUS RESET (opcionális)
+   ========================================================================== */
+button{ outline: none; }
+button:focus{ outline: none; box-shadow: none; }
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+@media (max-width: 600px){
+  .sb-header{ height: 64px; padding: 0 12px; gap: 8px; }
+  .sb-logo-only{ height: 36px; margin-left: 4px; flex-shrink: 0; }
+  .sb-brand { flex-shrink: 0; }
+  .sb-hamburger{ width: 36px; height: 36px; flex-shrink: 0; }
+  .sb-profile{ width: 42px; height: 42px; flex-basis: 42px; flex-shrink: 0; margin-left: auto; }
+  .sb-user-search { flex: 1 1 100px; min-width: 80px; max-width: 180px; margin: 0 8px; }
+  .user-search-input { padding: 8px 10px; font-size: 12px; }
+}
+
+/* ==========================================================================
+   HAMBURGER PANEL POSITIONING FIXES
+   ========================================================================== */
+
+/* A hamburger gomb körüli wrapper – ehhez igazodjon a panel */
+.hamburger-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Maga a lenyíló doboz, ami a gomb ALATT jelenik meg */
+.hamburger-panel {
+  position: absolute;
+  top: calc(100% + 10px);  /* a hamburger gomb aljától 10px-re */
+  left: 0;                 /* a gomb bal szélétől induljon */
+  z-index: 1000;
+}

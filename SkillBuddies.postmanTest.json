@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "a0195e67-93d6-42bf-845d-45186538d118",
+		"name": "SkillBuddies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41645673",
+		"_collection_link": "https://novesz-8829019.postman.co/workspace/Eszter's-Team's-Workspace~65dd523e-be52-4b0e-8974-44a9248ffde0/collection/41645673-a0195e67-93d6-42bf-845d-45186538d118?action=share&source=collection_link&creator=41645673"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "usersAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/users/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/users/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"random\",\r\n    \"email\" : \"random@example.com\",\r\n    \"password\" : \"random\",\r\n    \"rank\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/users/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"Hubertusz\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/users/change/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"change",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userRank\" : \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/users/updateRank/10",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"updateRank",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Tokens\" : 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/users/updateTokens/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"updateTokens",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "makeReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Rating\" : 4,\r\n    \"Tartalom\" : \"Good guy\",\r\n    \"Reviewee\" : 9,\r\n    \"Reviewer\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/reviews/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"reviews",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editReview",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Rating\" : 4,\r\n    \"Tartalom\" : \"Good worker, but in need of improvement\",\r\n    \"Reviewer\" : 4,\r\n    \"Reviewee\" : 8\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/reviews/edit/",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"reviews",
+								"edit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Reviewer\" : 4,\r\n    \"Reviewee\" : 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/reviews/delete/",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"reviews",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/reviews/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"reviews",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "skills",
+			"item": [
+				{
+					"name": "allSkills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/skills",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userSkills",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserID\" : 4,\r\n    \"SkillID\" : 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/users/addSkill",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"addSkill"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "createTicket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\" : \"palpal828@hengersor.hu\",\r\n    \"Descr\" : \"cannot log in\",\r\n    \"Text\" : \"I simply cannot log in\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/tickets/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTickets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserID\" : 8,\r\n    \"Descr\" : \"cannot log in\",\r\n    \"Text\" : \"I simply cannot log in\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/tickets",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticketResolve",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3001/tickets/resolve/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets",
+								"resolve",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "createChat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ChatName\" : \"Cuncik\",\r\n    \"ChatPic\" : \"none\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/chats/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getChats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ChatName\" : \"Cuncik\",\r\n    \"ChatPic\" : \"none\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/chats/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "chatsByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ChatName\" : \"Cuncik\",\r\n    \"ChatPic\" : \"none\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/chats/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "joinChat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserID\" : 4,\r\n    \"ChatID\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/chats/join",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"join"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "leaveChat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ChatID\" : 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/chats/leave/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"leave",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rndChats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ChatName\" : \"Cuncik\",\r\n    \"ChatPic\" : \"none\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/chats/random/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"random",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "makeadminChats",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserID\" : 4,\r\n    \"ChatID\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/chats/makeAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"makeAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteChats",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserID\" : 4,\r\n    \"ChatID\" : 1\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/chats/delete/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editChats",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ChatName\" : \"Cuncik\",\r\n    \"ChatPic\" : \"Cuncik.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/chats/edit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"chats",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "msgs",
+			"item": [
+				{
+					"name": "writeMsg",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserID\" : 4,\r\n    \"ChatID\" : 1,\r\n    \"Content\" : \"hihetetlenül\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/messages/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"messages",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editMsg",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Content\" : \"Szeretem a tejet és a kakaót is\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/messages/edit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"messages",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMsg",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Content\" : \"Szeretem a tejet és a kakaót is\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/messages/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"messages",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "msgsInChats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Content\" : \"Szeretem a tejet és a kakaót is\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/messages/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "testCase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

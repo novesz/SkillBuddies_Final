@@ -1,0 +1,51 @@
+.navbar {
+  position: block;
+  top: calc(100% + 10px); /* a hamburger gomb alatt */
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-box {
+  background-color: #89a8d8;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  width: 200px;
+}
+
+.navbar-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-box li {
+  margin: 12px 0;
+}
+
+.navbar-box a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar-box a:hover {
+  text-decoration: none;
+}
+
+.navbar-btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #000;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbar-btn-link:hover {
+  text-decoration: none;
+}

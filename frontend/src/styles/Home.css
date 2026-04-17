@@ -1,0 +1,225 @@
+:root{
+  --bg1:#89a8d8; --bg2:#6286bf; --card:#82a3db;
+  --text:#0f172a; --chip:#efe6f8; --shadow:10px 10px 20px rgba(0,0,0,.25);
+}
+
+/* teljes képernyős háttér */
+html,body{height:100%;margin:0}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+
+.sb-page{
+  min-height:100vh; width:100%; color:var(--text);
+  background:
+    radial-gradient(1500px 800px at 25% 30%, var(--bg2), transparent 60%),
+    linear-gradient(135deg, var(--bg1), #9bb6e9 60%, #a9bdea);
+  background-attachment:fixed;
+}
+
+.sb-error {
+  color: #f97373;
+  margin-top: 8px;
+}
+
+.sb-empty {
+  color: #4b5563;
+  margin-top: 8px;
+}
+
+.sb-loading,
+.sb-end {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 6px 0 0;
+  color: rgba(15, 23, 42, 0.85);
+  font-weight: 700;
+}
+
+.sb-loading-more {
+  margin-top: 14px;
+}
+
+.sb-sentinel {
+  height: 1px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+
+/* tartalom: full width + kényelmes belső margó */
+.sb-content{
+  width:100%; max-width:none;
+  padding: clamp(16px,3vw,32px) clamp(20px,4vw,60px);
+  margin:0 auto;
+}
+
+/* kereső + chipek */
+.sb-search-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:18px}
+.sb-search{
+  position:relative; width:min(760px,100%);
+  background:#eadaf4;border-radius:12px; box-shadow:var(--shadow);
+}
+.sb-search input{
+  width:100%; padding:14px 44px 14px 16px;
+  border:none; background:transparent; font-size:16px; outline:none; color:var(--text);
+}
+.sb-icon{
+  position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  width:22px;height:22px;color:#667085;
+}
+
+/* filter row: [‹] chips [›] – lapozás nyilakkal, nincs csúszka; chip ne menjen a gomb alá */
+.sb-chips-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: min(760px, 100%);
+  min-width: 0;
+}
+
+.sb-chip-arrow {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.25);
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  box-shadow: 5px 5px 10px rgba(0,0,0,.12);
+}
+.sb-chip-arrow:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+.sb-chip-arrow:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Chip lista: nyilak között, nincs görgetés – lapozás nyilakkal; ne csússzon a gomb alá */
+.sb-chips-row .sb-chips {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sb-chips li {
+  background: var(--chip);
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,.15);
+  font-weight: 600;
+  user-select: none;
+  /* Egy sor, hosszú szöveg levágva "..." -tal, ne legyen óriás doboz */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+  flex-shrink: 0;
+}
+
+/* kártyarács: auto-fit -> kitölti a szélességet */
+.sb-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(16px,2vw,28px);
+  margin-top:32px;
+}
+
+.sb-card{
+  background:var(--card); border-radius:24px; padding:22px 20px 16px;
+  box-shadow:var(--shadow); min-height:280px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.sb-card:hover{ transform:translateY(-3px); box-shadow:12px 12px 24px rgba(0,0,0,.25) }
+
+.sb-card h3{ margin:0 0 10px; letter-spacing:1px; font-weight:700 }
+.sb-list{ margin:8px 0 22px 17px; padding:0; line-height:1.6; font-weight:600 }
+
+.sb-card-footer{ display:flex; align-items:center; gap:10px }
+.sb-avatars{ display:flex; align-items:center }
+.sb-av{ width:24px;height:24px;border-radius:50%; background:#c1b9ae; border:2px solid rgba(255,255,255,.8); margin-left:-6px }
+.sb-av:first-child{ margin-left:0 }
+.sb-count{ margin-left:6px; color:#eaeef4; font-size:12px; opacity:.95 }
+.sb-join{ margin-left:auto; background:#e5e5e0; border:none; border-radius:16px; padding:8px 16px; font-weight:700; cursor:pointer; box-shadow:var(--shadow) }
+.sb-join:hover{ background:#f2f2ed }
+
+/* ================================
+   Kártya fejléc + avatar beállítás
+   ================================ */
+
+.sb-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* Avatar kör: fix méret + kerek + középre igazítás */
+.sb-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  background: #e5e7eb;                 /* ha nincs kép, szürke háttér */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Maga a kép: kitölti a kört arányosan */
+.sb-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ne torzuljon, csak szépen belevág */
+  display: block;
+}
+
+/* Ha nincs kép, az első betű megjelenítése */
+.sb-card-avatar span {
+  line-height: 1;
+}
+
+/* reszponzív finomítások */
+@media (max-width:640px){
+  .sb-card{border-radius:18px; padding:18px 16px}
+  .sb-search-wrap{margin-top:10px}
+}
+@media (max-width:480px){ .sb-join{padding:6px 12px} }
+
+/* ==========================================================================
+   Szuro aktiv gomb kinezet
+   ========================================================================== */
+
+.sb-chips li {
+  cursor: pointer;
+}
+
+.sb-chip.active {
+  outline: 2px solid rgb(50, 78, 168); 
+  background-color: #7fa2da;
+}

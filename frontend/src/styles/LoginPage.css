@@ -1,0 +1,153 @@
+/* Fő oldal háttér és elrendezés */
+.login-page {
+  min-height: 100vh; /* Change height to min-height */
+  width: 100%;
+  background: linear-gradient(135deg, #89a8d8, #6286bf);
+  background-attachment: fixed; /* Ensure background stays fixed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  color: #0f172a;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, .25);
+}
+
+/* Bejelentkezés doboz */
+.login-container {
+  margin-top: 80px;
+  width: 420px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 50px 40px;
+}
+
+/* Cím */
+.login-title {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Input mezők */
+.login-form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e8eaf6;
+  font-size: 15px;
+  outline: none;
+}
+
+/* Két input egy sorban */
+.name-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.name-row input {
+  width: 100%;
+  flex: 1;
+}
+
+/* Gomb */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffb300;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Gomb hover effekt */
+.login-button:hover {
+  background-color: #ffa000;
+  transform: scale(1.03);
+}
+
+/* Alsó linkek (pl. regisztráció, jelszó) */
+.login-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-links a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+/* Coming Soon Modal */
+.coming-soon-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.coming-soon-content {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  max-width: 350px;
+}
+
+.coming-soon-content h3 {
+  margin: 0 0 15px 0;
+  color: #1e88e5;
+  font-size: 22px;
+}
+
+.coming-soon-content p {
+  margin: 0 0 20px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.coming-soon-content button {
+  background-color: #ffb300;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.coming-soon-content button:hover {
+  background-color: #ffa000;
+}
+
+/* Reszponzív stílusok */
+/* Tabletek és kisebb kijelzők */
+@media (max-width: 900px) {
+  .login-container {
+    width: 70%;
+    padding: 40px 30px;
+  }
+}
+
