@@ -1,0 +1,25 @@
+SkillBuddies teszt felhasználók adatai:
+
+Felhasználó név: Herr Paulus
+Email: palpal828@hengersor.hu
+Jelszó: 
+
+Felhasználó név: Eszti Eszti
+Email: novesz831@hengersor.hu
+Jelszó: Eszter
+
+Felhasználó név: Hubi Hubi
+Email: szahub608@hengersor.hu
+Jelszó: 
+
+Felhasználó név: Demo User
+Email: demo@skillbuddies.test
+Jelszó: password
+
+Felhasználó név: Team Admin
+Email: admin@skillbuddies.test
+Jelszó: password
+
+Felhasználó név: Test Member
+Email: member@skillbuddies.test
+Jelszó: password
